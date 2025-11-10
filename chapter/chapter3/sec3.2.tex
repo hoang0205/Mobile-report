@@ -1,9 +1,27 @@
-\section{Ca sử dụng và mối quan hệ giữa các tác nhân}
-\subsection{Các tác nhân}
-Hệ thống gồm có hai tác nhân tương tác: Người dùng và Chatbot
-\subsection{Biểu đổ use case tổng quan}
+\section{Biểu đồ ca sử dụng}
+
+Hệ thống gồm một tác nhân duy nhất là người dùng. 
+Người dùng có thể thực hiện các chức năng chính như trong 
+hình \ref{fig:use-case-diagram}.
+
+\clearpage
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/use-case-diagram.png}
-	\caption{Biểu đồ use case tổng quan}
+	\includegraphics[width=0.7\textwidth]{figures/use-case-diagram.png}
+	\caption{Biểu đồ ca sử dụng}
+	\label{fig:use-case-diagram}
 \end{figure}
+
+\clearpage
+
+Từ việc xem xét những ca sử dụng này, chúng tôi đã phát triển 
+kiến trúc của hệ thống theo mô hình Client - Server, trong đó
+Server được thiết kể theo kiến trúc Microservices để dễ dàng
+mở rộng với các tính năng mới trong tương lai. 
+
+Các ca sử dụng trong biểu đồ được chia cho nhiều service khác nhau, với 
+các phương thức giao tiếp và truyền tin cần thiết (chi tiết
+ở \ref{sec:architecture}). Chúng tôi sẽ chỉ lưu ý và giải thích
+chi tiết những ca sử dụng quan trọng trong các phần sau của 
+báo cáo.

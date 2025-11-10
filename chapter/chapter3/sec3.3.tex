@@ -1,50 +1,72 @@
-\section{Các ca sử dụng}
+\section{Đặc tả ca sử dụng}
+
+Trong phần này, những ca sử dụng được nhắc tới trong biểu đồ
+ca sử dụng sẽ được mô tả chi tiết thông qua các đặc tả ca sử dụng
+(use case specification).
 
 
-\subsection{Sửa giao dịch}
+\subsection{Phát bài hát}
+Ca sử dụng phát bài hát là trọng tâm của một ứng dụng nghe 
+nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong 
+đặc tả ca sử dụng dưới đây.
+
+
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
-	\textbf{Mã Use case} & 5 \\
+	\textbf{Mã Use case} & UC-PlaySong \\
 	\hline
-	\textbf{Tên Use case} & Sửa giao dịch \\
+	\textbf{Tên Use case} & Playing a song \\
 	\hline
 	\textbf{Tác nhân} & Người dùng \\
 	\hline
-	\textbf{Mô tả} & Người dùng sửa thông tin của một giao dịch đã thêm trước đó \\
+	\textbf{Mô tả} & Người dùng bấm vào một bản nhạc trên màn hình chính để phát bản nhạc đó. \\
 	\hline
-	\textbf{Sự kiện kích hoạt} & Bấm nút "Edit transaction" bên cạnh một giao dịch trong phần Transaction History \\
+	\textbf{Sự kiện kích hoạt} & Người dùng bấm vào bản nhạc \\
 	\hline
-	\textbf{Pre-condition} & Người dùng đã đăng nhập \\
-	\hline
-	\textbf{Pre-condition} & Người dùng đã đăng nhập \\
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập vào app và hình ảnh các bản nhạc đã được load trên màn hình chính.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
 	\hline
 	\textbf{Basic flow} &
 	\begin{tabular}{|p{1cm}|p{7.5cm}|}
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		1 & Người dùng chọn một giao dịch cần sửa \\
+		1 & Người dùng bấm vào hình bản nhạc trên màn hình chính \\
 		\hline
-		2 & Hệ thống hiển thị thông tin giao dịch \\
+		2 & Client (mobile app) gửi ID bản nhạc người dùng bấm vào về API Gateway của Server \\
 		\hline
-		3 & Người dùng chỉnh sửa thông tin giao dịch và xác nhận\\
+		3 & API Gateway gửi ID bản nhạc tới Track Service \\
 		\hline
-		4 & Hệ thống cập nhật giao dịch và lưu vào CSDL \\
+		4 & Track Service tìm trong cơ sở dữ liệu và trả về Storage Key của bản nhạc trên Amazon Cloud \\
+		\hline
+		5 & Client gọi Playing Service với Key để lấy link bản nhạc qua API Gateway \\
+		\hline
+		6 & Client load giao diện phát nhạc cho người dùng \\
 		\hline
 	\end{tabular}
 	\\
 	\hline
-	\textbf{Alternate flow:} Người dùng nhập thông tin lỗi &
+	\textbf{Alternate flow:} Client thoát giao diện phát nhạc &
 	\begin{tabular}{|p{1cm}|p{7.5cm}|}
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		4b & Hệ thống yêu cầu nhập lại thông tin\\
+		6.1.1 & Client thoát giao diện phát nhạc về home của ứng dụng \\
+		\hline
+		6.1.2 & Khi người dùng vào lại, Client hiện thanh điều khiển nhạc ở dưới cùng màn hình \\
 		\hline
 	\end{tabular}
 	\\
 	\hline
-	\caption{Use Case: Sửa giao dịch} \label{tab:usecase-suagiaodich} \\
+	\textbf{Post-condition} & Bản nhạc được phát và người dùng có thể điều khiển được bản nhạc \\
+	\hline
+	\textbf{Other} & Bản nhạc hiện trên màn hình chính được đảm bảo có trong database và được upload lên Object Storage Bucket \\
+	\hline
+	\caption{Use Case: Playing a song} \label{tab:usecase-playingsong} \\
 \end{longtable}
 
 
