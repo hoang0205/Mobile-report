@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.1)  11 NOV 2025 01:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.11.1)  11 NOV 2025 01:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1276,7 +1276,7 @@ LaTeX Info: Redefining \nameref on input line 116.
 \openout4 = `main.out'.
 
  (./cover/Biangoai.tex
-<figures/UET_logo.jpg, id=256, 411.5375pt x 411.5375pt>
+<figures/UET_logo.jpg, id=260, 411.5375pt x 411.5375pt>
 File: figures/UET_logo.jpg Graphic file (type jpg)
 <use figures/UET_logo.jpg>
 Package pdftex.def Info: figures/UET_logo.jpg  used on input line 19.
@@ -1315,24 +1315,24 @@ Underfull \vbox (badness 2512) has occurred while \output is active []
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3] (./main.lof)
+ [3] [4] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [4
+ [5
 
 ] (./main.lot)
 \tf@lot=\write7
 \openout7 = `main.lot'.
 
- [5
+ [6
 
 ] (./cover/vietat.tex
 Underfull \hbox (badness 10000) in paragraph at lines 18--18
 []|\T5/ptm/m/n/13 Alternative
  []
 
-) [6
+) [7
 
 
 ] (./chapter/chap1_introduction.tex
@@ -1440,7 +1440,7 @@ Ch\uhorn \ohorn ng 3.
 
 
 ]
-<figures/use-case-diagram.png, id=478, 485.815pt x 975.645pt>
+<figures/use-case-diagram.png, id=490, 485.815pt x 975.645pt>
 File: figures/use-case-diagram.png Graphic file (type png)
 <use figures/use-case-diagram.png>
 Package pdftex.def Info: figures/use-case-diagram.png  used on input line 11.
@@ -1454,8 +1454,23 @@ Underfull \hbox (badness 1325) in paragraph at lines 53--53
 
 [9
 
-] [10] [11]) (./chapter/chapter3/sec3.4.tex
-<figures/edit-transac-activity.png, id=500, 471.26062pt x 523.9575pt>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]|\T5/ptm/b/n/13 Alternate flow: \T5/ptm/m/n/13 C¡c
+ []
+
+[10]
+Underfull \hbox (badness 3579) in paragraph at lines 174--174
+[]|\T5/ptm/b/n/13 Alternate flow: \T5/ptm/m/n/13 ^^^«ng
+ []
+
+[11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\T5/ptm/b/n/13 Alternate flow: \T5/ptm/m/n/13 T¼m
+ []
+
+[13]) (./chapter/chapter3/sec3.4.tex
+<figures/edit-transac-activity.png, id=519, 471.26062pt x 523.9575pt>
 File: figures/edit-transac-activity.png Graphic file (type png)
 <use figures/edit-transac-activity.png>
 Package pdftex.def Info: figures/edit-transac-activity.png  used on input line 5.
@@ -1463,8 +1478,8 @@ Package pdftex.def Info: figures/edit-transac-activity.png  used on input line 5
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
-<figures/view-spending-report-activity.png, id=505, 448.67625pt x 554.07pt>
+ [14]
+<figures/view-spending-report-activity.png, id=524, 448.67625pt x 554.07pt>
 File: figures/view-spending-report-activity.png Graphic file (type png)
 <use figures/view-spending-report-activity.png>
 Package pdftex.def Info: figures/view-spending-report-activity.png  used on input line 12.
@@ -1472,8 +1487,8 @@ Package pdftex.def Info: figures/view-spending-report-activity.png  used on inpu
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./figures/edit-transac-activity.png>]
-<figures/edit-cate-activity.png, id=511, 430.60875pt x 551.81157pt>
+ [15 <./figures/edit-transac-activity.png>]
+<figures/edit-cate-activity.png, id=531, 430.60875pt x 551.81157pt>
 File: figures/edit-cate-activity.png Graphic file (type png)
 <use figures/edit-cate-activity.png>
 Package pdftex.def Info: figures/edit-cate-activity.png  used on input line 19.
@@ -1481,8 +1496,8 @@ Package pdftex.def Info: figures/edit-cate-activity.png  used on input line 19.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./figures/view-spending-report-activity.png>]
-<figures/AI-activity.png, id=517, 1064.97874pt x 724.7075pt>
+ [16 <./figures/view-spending-report-activity.png>]
+<figures/AI-activity.png, id=537, 1064.97874pt x 724.7075pt>
 File: figures/AI-activity.png Graphic file (type png)
 <use figures/AI-activity.png>
 Package pdftex.def Info: figures/AI-activity.png  used on input line 26.
@@ -1490,15 +1505,15 @@ Package pdftex.def Info: figures/AI-activity.png  used on input line 26.
 ) (./chapter/chapter3/sec3.5.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./figures/edit-cate-activity.png>])) [16 <./figures/AI-activity.png>] (./chapter/chap4_system_architecture.tex
+ [17 <./figures/edit-cate-activity.png>])) [18 <./figures/AI-activity.png>] (./chapter/chap4_system_architecture.tex
 Ch\uhorn \ohorn ng 4.
 (./chapter/chapter4/architecture.tex
-<figures/architecture.png, id=529, 318.7107pt x 58.5387pt>
+<figures/architecture.png, id=548, 318.7107pt x 58.5387pt>
 File: figures/architecture.png Graphic file (type png)
 <use figures/architecture.png>
 Package pdftex.def Info: figures/architecture.png  used on input line 8.
 (pdftex.def)             Requested size: 455.24411pt x 83.62125pt.
-<figures/server-architecture.png, id=530, 311.4837pt x 441.5697pt>
+<figures/server-architecture.png, id=549, 311.4837pt x 441.5697pt>
 File: figures/server-architecture.png Graphic file (type png)
 <use figures/server-architecture.png>
 Package pdftex.def Info: figures/server-architecture.png  used on input line 31.
@@ -1506,14 +1521,14 @@ Package pdftex.def Info: figures/server-architecture.png  used on input line 31.
 
 Underfull \vbox (badness 3291) has occurred while \output is active []
 
- [17
+ [19
 
 
  <./figures/architecture.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./figures/server-architecture.png>]) (./chapter/chapter4/sequence.tex [19]
-<figures/chatbot.png, id=548, 1622.06pt x 2392.94pt>
+ [20 <./figures/server-architecture.png>]) (./chapter/chapter4/sequence.tex [21]
+<figures/chatbot.png, id=568, 1622.06pt x 2392.94pt>
 File: figures/chatbot.png Graphic file (type png)
 <use figures/chatbot.png>
 Package pdftex.def Info: figures/chatbot.png  used on input line 35.
@@ -1521,8 +1536,8 @@ Package pdftex.def Info: figures/chatbot.png  used on input line 35.
 
 Overfull \vbox (8.27005pt too high) has occurred while \output is active []
 
- [20 <./figures/chatbot.png>] [21]
-<figures/edit-transac-sq.png, id=558, 480.29437pt x 519.44063pt>
+ [22 <./figures/chatbot.png>] [23]
+<figures/edit-transac-sq.png, id=578, 480.29437pt x 519.44063pt>
 File: figures/edit-transac-sq.png Graphic file (type png)
 <use figures/edit-transac-sq.png>
 Package pdftex.def Info: figures/edit-transac-sq.png  used on input line 50.
@@ -1538,20 +1553,20 @@ LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
             Default family used instead on input line 60.
-[22 <./figures/edit-transac-sq.png>] [23]
-<figures/view-report-sq.png, id=570, 594.72188pt x 352.31625pt>
+[24 <./figures/edit-transac-sq.png>] [25]
+<figures/view-report-sq.png, id=589, 594.72188pt x 352.31625pt>
 File: figures/view-report-sq.png Graphic file (type png)
 <use figures/view-report-sq.png>
 Package pdftex.def Info: figures/view-report-sq.png  used on input line 66.
 (pdftex.def)             Requested size: 455.24411pt x 269.6877pt.
- [24 <./figures/view-report-sq.png>]
-<figures/add-transac-sq.png, id=576, 584.93532pt x 350.05782pt>
+ [26 <./figures/view-report-sq.png>]
+<figures/add-transac-sq.png, id=595, 584.93532pt x 350.05782pt>
 File: figures/add-transac-sq.png Graphic file (type png)
 <use figures/add-transac-sq.png>
 Package pdftex.def Info: figures/add-transac-sq.png  used on input line 79.
 (pdftex.def)             Requested size: 455.24411pt x 272.45108pt.
 ) (./chapter/chapter4/database.tex
-<figures/user_ERD.png, id=577, 607.26875pt x 704.6325pt>
+<figures/user_ERD.png, id=596, 607.26875pt x 704.6325pt>
 File: figures/user_ERD.png Graphic file (type png)
 <use figures/user_ERD.png>
 Package pdftex.def Info: figures/user_ERD.png  used on input line 11.
@@ -1559,8 +1574,8 @@ Package pdftex.def Info: figures/user_ERD.png  used on input line 11.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./figures/add-transac-sq.png>]
-<figures/ai_erd.png, id=583, 301.125pt x 623.32875pt>
+ [27 <./figures/add-transac-sq.png>]
+<figures/ai_erd.png, id=604, 301.125pt x 623.32875pt>
 File: figures/ai_erd.png Graphic file (type png)
 <use figures/ai_erd.png>
 Package pdftex.def Info: figures/ai_erd.png  used on input line 21.
@@ -1568,25 +1583,25 @@ Package pdftex.def Info: figures/ai_erd.png  used on input line 21.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26 <./figures/user_ERD.png>]) (./chapter/chapter4/conclusion.tex)) [27 <./figures/ai_erd.png>] (./chapter/chap5_ai_building.tex
+ [28 <./figures/user_ERD.png>]) (./chapter/chapter4/conclusion.tex)) [29 <./figures/ai_erd.png>] (./chapter/chap5_ai_building.tex
 Ch\uhorn \ohorn ng 5.
 (./chapter/chapter5/sec5.1.tex
-<figures/querier.png, id=596, 216.81pt x 249.93375pt>
+<figures/querier.png, id=617, 216.81pt x 249.93375pt>
 File: figures/querier.png Graphic file (type png)
 <use figures/querier.png>
 Package pdftex.def Info: figures/querier.png  used on input line 11.
 (pdftex.def)             Requested size: 136.57462pt x 157.44765pt.
 ) (./chapter/chapter5/sec5.2.tex
-<figures/supervisor.png, id=597, 389.455pt x 349.305pt>
+<figures/supervisor.png, id=618, 389.455pt x 349.305pt>
 File: figures/supervisor.png Graphic file (type png)
 <use figures/supervisor.png>
 Package pdftex.def Info: figures/supervisor.png  used on input line 15.
 (pdftex.def)             Requested size: 227.62206pt x 204.15338pt.
- [28
+ [30
 
 
  <./figures/querier.png>]) (./chapter/chapter5/sec5.3.tex
-<figures/LCLMsmethod.png, id=605, 401.24907pt x 325.96782pt>
+<figures/LCLMsmethod.png, id=624, 401.24907pt x 325.96782pt>
 File: figures/LCLMsmethod.png Graphic file (type png)
 <use figures/LCLMsmethod.png>
 Package pdftex.def Info: figures/LCLMsmethod.png  used on input line 9.
@@ -1594,13 +1609,13 @@ Package pdftex.def Info: figures/LCLMsmethod.png  used on input line 9.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29 <./figures/supervisor.png (PNG copy)>]
-<figures/embedding.png, id=610, 328.22626pt x 199.49532pt>
+ [31 <./figures/supervisor.png (PNG copy)>]
+<figures/embedding.png, id=629, 328.22626pt x 199.49532pt>
 File: figures/embedding.png Graphic file (type png)
 <use figures/embedding.png>
 Package pdftex.def Info: figures/embedding.png  used on input line 17.
 (pdftex.def)             Requested size: 318.66948pt x 193.6898pt.
-<figures/recall_search.png, id=611, 344.03531pt x 294.34969pt>
+<figures/recall_search.png, id=630, 344.03531pt x 294.34969pt>
 File: figures/recall_search.png Graphic file (type png)
 <use figures/recall_search.png>
 Package pdftex.def Info: figures/recall_search.png  used on input line 25.
@@ -1608,8 +1623,8 @@ Package pdftex.def Info: figures/recall_search.png  used on input line 25.
 
 Underfull \vbox (badness 2384) has occurred while \output is active []
 
- [30 <./figures/LCLMsmethod.png> <./figures/embedding.png>]) (./chapter/chapter5/sec5.4.tex
-<figures/tavily.png, id=618, 1027.84pt x 1027.84pt>
+ [32 <./figures/LCLMsmethod.png> <./figures/embedding.png>]) (./chapter/chapter5/sec5.4.tex
+<figures/tavily.png, id=637, 1027.84pt x 1027.84pt>
 File: figures/tavily.png Graphic file (type png)
 <use figures/tavily.png>
 Package pdftex.def Info: figures/tavily.png  used on input line 7.
@@ -1617,39 +1632,39 @@ Package pdftex.def Info: figures/tavily.png  used on input line 7.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./figures/recall_search.png>])) [32 <./figures/tavily.png>] (./chapter/chap6_testing.tex
+ [33 <./figures/recall_search.png>])) [34 <./figures/tavily.png>] (./chapter/chap6_testing.tex
 Ch\uhorn \ohorn ng 6.
 (./chapter/chapter6/ui.tex
-<figures/ui/login.png, id=628, 1894.07625pt x 919.435pt>
+<figures/ui/login.png, id=648, 1894.07625pt x 919.435pt>
 File: figures/ui/login.png Graphic file (type png)
 <use figures/ui/login.png>
 Package pdftex.def Info: figures/ui/login.png  used on input line 5.
 (pdftex.def)             Requested size: 455.24411pt x 220.97755pt.
-<figures/ui/home.png, id=629, 1901.1025pt x 921.4425pt>
+<figures/ui/home.png, id=649, 1901.1025pt x 921.4425pt>
 File: figures/ui/home.png Graphic file (type png)
 <use figures/ui/home.png>
 Package pdftex.def Info: figures/ui/home.png  used on input line 10.
 (pdftex.def)             Requested size: 455.24411pt x 220.64456pt.
-<figures/ui/transactions.png, id=630, 1904.11375pt x 918.43124pt>
+<figures/ui/transactions.png, id=650, 1904.11375pt x 918.43124pt>
 File: figures/ui/transactions.png Graphic file (type png)
 <use figures/ui/transactions.png>
 Package pdftex.def Info: figures/ui/transactions.png  used on input line 15.
 (pdftex.def)             Requested size: 455.24411pt x 219.57314pt.
-<figures/ui/add-transaction.png, id=631, 1891.065pt x 919.435pt>
+<figures/ui/add-transaction.png, id=651, 1891.065pt x 919.435pt>
 File: figures/ui/add-transaction.png Graphic file (type png)
 <use figures/ui/add-transaction.png>
 Package pdftex.def Info: figures/ui/add-transaction.png  used on input line 20.
 (pdftex.def)             Requested size: 455.24411pt x 221.34232pt.
- [33
+ [35
 
 
  <./figures/ui/login.png> <./figures/ui/home.png>]
-<figures/ui/categories.png, id=636, 1900.09875pt x 913.4125pt>
+<figures/ui/categories.png, id=656, 1900.09875pt x 913.4125pt>
 File: figures/ui/categories.png Graphic file (type png)
 <use figures/ui/categories.png>
 Package pdftex.def Info: figures/ui/categories.png  used on input line 25.
 (pdftex.def)             Requested size: 455.24411pt x 218.83322pt.
-<figures/ui/stats.png, id=637, 1892.06876pt x 921.4425pt>
+<figures/ui/stats.png, id=657, 1892.06876pt x 921.4425pt>
 File: figures/ui/stats.png Graphic file (type png)
 <use figures/ui/stats.png>
 Package pdftex.def Info: figures/ui/stats.png  used on input line 30.
@@ -1657,8 +1672,8 @@ Package pdftex.def Info: figures/ui/stats.png  used on input line 30.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34 <./figures/ui/transactions.png> <./figures/ui/add-transaction.png>]
-<figures/ui/ai.png, id=643, 1899.095pt x 920.43875pt>
+ [36 <./figures/ui/transactions.png> <./figures/ui/add-transaction.png>]
+<figures/ui/ai.png, id=662, 1899.095pt x 920.43875pt>
 File: figures/ui/ai.png Graphic file (type png)
 <use figures/ui/ai.png>
 Package pdftex.def Info: figures/ui/ai.png  used on input line 35.
@@ -1668,7 +1683,7 @@ Package pdftex.def Info: figures/ui/ai.png  used on input line 35.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35 <./figures/ui/categories.png> <./figures/ui/stats.png>]
+ [37 <./figures/ui/categories.png> <./figures/ui/stats.png>]
 Overfull \hbox (4.44513pt too wide) in paragraph at lines 11--11
 []|\T5/ptm/b/n/13 STT| 
  []
@@ -2563,7 +2578,7 @@ Overfull \hbox (32.73941pt too wide) in alignment at lines 22--94
  [] [] [] [] [] [] [] 
  []
 
-[36 <./figures/ui/ai.png>] [37] [38] [39]
+[38 <./figures/ui/ai.png>] [39] [40] [41]
 Overfull \hbox (4.44513pt too wide) in paragraph at lines 103--103
 []|\T5/ptm/b/n/13 STT| 
  []
@@ -4133,14 +4148,14 @@ Overfull \hbox (32.73941pt too wide) in alignment at lines 114--241
  [] [] [] [] [] [] [] 
  []
 
-[40] [41] [42] [43] [44] [45] [46])) [47] (./chapter/chap7_conclusion.tex
+[42] [43] [44] [45] [46] [47] [48])) [49] (./chapter/chap7_conclusion.tex
 Ch\uhorn \ohorn ng 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--8
 
  []
 
-) [48
+) [50
 
 
 ] (./main.aux)
@@ -4152,21 +4167,21 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C7A666A0FD295F6283BB0623787B3D90;10266.
+(rerunfilecheck)             Checksum: 52FC830DB0F2213FEBAE32B8E3AC9D59;10292.
  ) 
 Here is how much of TeX's memory you used:
- 55277 strings out of 479662
- 1371964 string characters out of 5883895
- 2165402 words of memory out of 5000000
- 72257 multiletter control sequences out of 15000+600000
+ 55285 strings out of 479662
+ 1372040 string characters out of 5883895
+ 2165447 words of memory out of 5000000
+ 72260 multiletter control sequences out of 15000+600000
  511576 words of font info for 90 fonts, out of 8000000 for 9000
  309 hyphenation exceptions out of 8191
  84i,18n,89p,768b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/lumasty/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/vntex/t5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/vntex/urwvn/utmb8v.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/urwvn/utmb8v.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/urwvn/utmr8v.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/urwvn/utmr8v.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/urwvn/utmri8v.pfb>
-Output written on main.pdf (57 pages, 2266109 bytes).
+Output written on main.pdf (60 pages, 2270052 bytes).
 PDF statistics:
- 774 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 162 named destinations out of 1000 (max. 500000)
- 644 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 794 PDF objects out of 1000 (max. 8388607)
+ 656 compressed objects within 7 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 
