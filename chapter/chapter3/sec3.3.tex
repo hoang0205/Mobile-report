@@ -72,6 +72,8 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 
 
 \subsection{Đăng ký}
+Ca sử dụng đăng ký cho phép người dùng tạo tài khoản để sử dụng ứng dụng.
+
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
 	\textbf{Mã Use case} & UC-Register \\
@@ -114,9 +116,9 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 		\hline
 		\textbf{STT} & \textbf{Sự kiện} \\
 		\hline
-		5.1.1 & Người dùng nhấn “Hiện mật khẩu” để hiển thị rõ password và confirm password \\
+		1.1.1 & Người dùng nhấn “Hiện mật khẩu” để hiển thị rõ password và confirm password \\
 		\hline
-		5.1.2 & Người dùng nhấn “Quay lại” để quay lại giao diện bắt đầu \\
+		1.1.2 & Người dùng nhấn “Quay lại” để quay lại giao diện bắt đầu \\
 		\hline
 	\end{tabular}
 	\\
@@ -134,6 +136,8 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 \end{longtable}
 
 \subsection{Đăng nhập}
+Ca sử dụng đăng nhập cho phép người dùng đăng nhập vào ứng dụng để sử dụng.
+
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
 	\textbf{Mã Use case} & UC-Login \\
@@ -171,7 +175,7 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 	\end{tabular}
 	\\
 	\hline
-	\textbf{Alternate flow:} Đăng nhập cách khác & Nhấn để đăng nhập bằng Google
+	\textbf{Alternate flow:} Đăng nhập cách khác & 2.1 Người dùng nhấn nút "Login with Google" để đăng nhập bằng Google
 	\\
 	\hline
 	\textbf{Post-condition} & 
@@ -186,6 +190,7 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 \end{longtable}
 
 \subsection{Đăng xuất}
+Ca sử dụng đăng xuất cho phép người dùng đăng xuất tài khoản ra khỏi ứng dụng.
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
 	\textbf{Mã Use case} & UC-Logout \\
@@ -236,10 +241,12 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 	\caption{Use Case: Logout} \label{tab:usecase-logout} \\
 \end{longtable}
 
+
 \subsection{Tìm kiếm bài hát}
+Ca sử dụng tìm kiếm bài hát cho phép người dùng có thể tìm kiếm các bài hát theo tên bài hát hoặc tên tác giả.
 \begin{longtable}{|p{4.5cm}|p{10cm}|}
 	\hline
-	\textbf{Mã Use case} & UC-SeachingSong \\
+	\textbf{Mã Use case} & UC-SearchSong \\
 	\hline
 	\textbf{Tên Use case} & Seach songs \\
 	\hline
@@ -274,7 +281,7 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 	\end{tabular}
 	\\
 	\hline
-	\textbf{Alternate flow:} Tìm kiếm theo tác giả &  Người dùng nhập tên tác giả \\
+	\textbf{Alternate flow:} Tìm kiếm theo tác giả & 2.1 Người dùng nhập tên tác giả \\
 	\hline
 	\textbf{Post-condition} & 
 	\begin{itemize}
@@ -283,8 +290,106 @@ nhạc. Chúng tôi đã phân tích và giải thích chi tiết trong
 	\hline
 	\textbf{Other} & None \\
 	\hline
-	\caption{Use Case: SearchingSong} \label{tab:usecase-seahcsong} \\
+	\caption{Use Case: Searching Songs} \label{tab:usecase-searchsong} \\
 \end{longtable}
 
+\subsection{Xem bài hát gần đây}
+Ca sử dụng xem bài hát gần đây cho phép người dùng có thể xem lịch sử phát bài hát.
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+	\hline
+	\textbf{Mã Use case} & UC-HistorySong \\
+	\hline
+	\textbf{Tên Use case} & History songs \\
+	\hline
+	\textbf{Tác nhân} & Người dùng \\
+	\hline
+	\textbf{Mô tả} & Người dùng xem lịch sử bài hát. \\
+	\hline
+	\textbf{Sự kiện kích hoạt} & Người dùng vào giao diện home của ứng dụng \\
+	\hline
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập thành công.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
+	\hline
+	\textbf{Basic flow} &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		1 & Người dùng vào giao diện home của ứng dụng \\
+		\hline
+		2 & Client gửi thông tin người dùng lên server để lấy lịch sử nghe \\
+		\hline
+		3 & Server kiểm tra thông tin và trả về kết quả \\
+		\hline
+		4 & Client load các bài hát server trả về lên giao diện \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Alternate flow:} & None \\
+	\hline
+	\textbf{Post-condition} & 
+	\begin{itemize}
+		\item Các bài hát được hiển thị trên giao diện và người dùng có thể phát nhạc.
+	\end{itemize} \\
+	\hline
+	\textbf{Other} & Đảm bảo người dùng đã từng phát nhạc trước đó \\
+	\hline
+	\caption{Use Case: History Songs} \label{tab:usecase-historysong} \\
+\end{longtable}
+
+\subsection{Lưu bài hát yêu thích}
+Ca sử dụng lưu bài hát yêu thích cho phép người dùng có thể lưu các bài hát vào mục yêu thích.
+\begin{longtable}{|p{4.5cm}|p{10cm}|}
+	\hline
+	\textbf{Mã Use case} & UC-FavoriteSong \\
+	\hline
+	\textbf{Tên Use case} & Favorite songs \\
+	\hline
+	\textbf{Tác nhân} & Người dùng \\
+	\hline
+	\textbf{Mô tả} & Người dùng lưu bài hát yêu thích. \\
+	\hline
+	\textbf{Sự kiện kích hoạt} & Người dùng ấn nút "Favorite" \\
+	\hline
+	\textbf{Pre-condition} &
+	\begin{itemize}
+		\item Người dùng đã đăng nhập thành công.
+		\item Người dùng đang phát nhạc và giao diện bài hát đã hiển thị.
+		\item Kết nối internet ổn định.
+	\end{itemize}
+	\\
+	\hline
+	\textbf{Basic flow} &
+	\begin{tabular}{|p{1cm}|p{7.5cm}|}
+		\hline
+		\textbf{STT} & \textbf{Sự kiện} \\
+		\hline
+		1 & Người dùng nhấn nút "Favorite" ở góc dưới cùng bên phải màn hình \\
+		\hline
+		2 & Client gửi thông tin bài hát, người dùng lên server để thêm vào mục yêu thích \\
+		\hline
+		3 & Server kiểm tra thông tin và lưu vào CSDL \\
+		\hline
+		4 & Server trả về kết quả \\
+		\hline
+	\end{tabular}
+	\\
+	\hline
+	\textbf{Alternate flow:} & None \\
+	\hline
+	\textbf{Post-condition} & 
+	\begin{itemize}
+		\item Bài hát được thêm vào mục yêu thích.
+	\end{itemize} \\
+	\hline
+	\textbf{Other} & None \\
+	\hline
+	\caption{Use Case: Favorite Songs} \label{tab:usecase-favoritesong} \\
+\end{longtable}
 
 
