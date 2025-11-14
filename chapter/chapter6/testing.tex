@@ -112,24 +112,31 @@
     & \textbf{Kết quả kiểm thử} & \textbf{Kết quả kỳ vọng}\\
     \hline
     \endhead
-        \rownumber & Đăng ký & Đăng ký tài khoản với thông tin: Tên: "user" (không bị trùng), email "user@test.com" (không trùng), mật khẩu "user"
-            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản mới với thông tin tương ứng được thêm vào CSDL\\
+        \rownumber & Đăng ký & firstname: "tran", lastname: "dinh", email: "23020043@vnu.edu.vn", password: "123456", confirmPassword: "123456"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Tài khoản mới với thông tin tương ứng được thêm vào CSDL, định hướng đến trang đăng nhập\\
             \hline
-        \rownumber & Đăng ký & Đăng ký với tên tài khoản bị trùng "user"
-            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+        \rownumber & Đăng ký - trùng email & firstname: "tran", lastname: "dinh", email "23020043@vnu.edu.vn", password: "123456", confirmPassword: "123456"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Thông báo lỗi: "Email already exists"\\
             \hline
-        \rownumber & Đăng ký & Đăng ký với mật khẩu rỗng
-            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+        \rownumber & Đăng ký - password khác confirmPassword & firstname: "tran", lastname: "dinh", email "", password: "123456", confirmPassword: "12345677"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Thông báo lỗi: "Passwords do not match"\\
             \hline
-        \rownumber & Đăng ký & Đăng ký với tên tài khoản rỗng
-            & Hữu Đức & 20/03/2025 & Đạt & Tài khoản không được tạo trong CSDL\\
+
+        \rownumber & Đăng nhập - sai mật khẩu & email "23020043@vnu.edu.vn", password: "12345677"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Thông báo lỗi "Incorrect password".\\
             \hline
-        \rownumber & Đăng nhập & Đăng nhập với thông tin không tồn tại trong CSDL
-            & Hữu Đức & 27/03/2025 & Đạt & Người dùng không đăng nhập được\\
+        \rownumber & Đăng nhập & email "23020043@vnu.edu.vn", password: "123456"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Đăng nhập thành công, định hướng đến trang home.\\
             \hline
-        \rownumber & Đăng nhập, xác thực người dùng & Xác thực người dùng và bắt đầu session mới với thông tin đúng trong CSDL
-            & Hữu Đức & 27/03/2025 & Đạt & Người dùng được xác thực bằng thông tin đã đăng kí, được đăng nhập\\
+
+        \rownumber & Đăng xuất & 
+            & Trần Đỉnh & 3/11/2025 & Đạt & Đăng xuất thành công, định hướng đến trang đăng nhập.\\
             \hline
+        
+        \rownumber & Tìm kiếm bài hát & keyword: "Taylor"
+            & Trần Đỉnh & 3/11/2025 & Đạt & Tìm kiếm bài hát thành công, giao diện hiện ra các bài hát liên quan đến keyword.\\
+            \hline
+
         \rownumber & Thêm phân loại giao dịch & Thêm phân loại với đầy đủ thông tin (tên, màu đại diện)
             & An Huy & 30/03/2025 & Không đạt, không có phân loại mới trong CSDL & Phân loại mới được thêm vào CSDL với thông tin chính xác \\
             \hline
