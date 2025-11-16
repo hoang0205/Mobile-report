@@ -1,9 +1,60 @@
 \section{Kiến trúc triển khai}
 \label{sec:deployment}
 
+Khác với kiến trúc monolithic dễ dàng triển khai khi toàn bộ hệ thống được đóng gói vào một gói duy nhất, microservice lại yêu cầu nhiều công đoạn và quy trình phức
+tạp hơn. Kiến trúc microservice gồm nhiều dịch vụ con với các phương thức giao tiếp và truyền tải thông tin giữa các hệ thống khiến chi phí và công sức để triển
+khai hệ thống một cách hiệu quả sẽ cao hơn. Điều này đặt ra yêu cầu cần có một bản mẫu thiết kế kiến trúc với chi tiết các công cụ và dịch vụ cần sử dụng khi 
+triển khai.
+
+Từ đó, để triển khai hệ thống \textbf{InsightTune} tốt, chúng tôi đã cân nhắc các công cụ và dịch vụ sẵn có của Amazon Web Service và thiết kế nên kiến trúc server
+khi triển khai trên AWS như hình \ref{fig:deployment}. 
+
+Với dung lượng lưu trữ yêu cầu cao cho file bài hát và ảnh của những bản nhạc, tạo một cơ sở dữ liệu dữ liệu để lưu trữ và sử dụng khi triển khai là không thực tế.
+Do đó, việc triển khai một bộ lưu trữ đối tượng (object storage) như S3 Bucket là bắt buộc đối với hệ thống yêu cầu dung lượng lưu trữ cho một file lơn như 
+\textbf{InsightTune}. Bằng cách này, hệ thống có khả năng triển khai hiệu quả với chi phí thấp hơn so với chỉ sử dụng cơ sở dữ liệu. Giải được vấn đề lưu trữ
+file bài hát ảnh hưởng  trực tiếp tới khả năng mở rộng trong yêu cầu \ref{req:scale}, chúng tôi tiếp tục hoàn thành hai yêu cầu \ref{req:sec}, \ref{req:perf}.
+
+Để thực hiện yêu cầu \ref{req:sec} về bảo mật, chúng tôi tạo ra một mạng đám mây riêng tư ảo (virtual private cloud). VPC bao gồm các mạng con riêng
+tư (private subnet) phục vụ cho: ECS Cluster (trình quản lý tài nguyên), RDS (triển khai của cơ sở dữ liệu quan hệ), MSK (triển khai của kafka). ECS Cluster quản lý
+nhiều dịch vụ khác nhau được tạo bởi ECS, mỗi dịch vụ này đều được định nghĩa bởi định nghĩa tác vụ (task definition) và cấu hình bằng một máy ảo EC2. Tất cả các phương
+thức giao tiếp đều thực hiện nội bộ tách biệt với mạng công cộng (public internet). Đối với giao tiếp với front end, server sẽ tập trung định tuyến một cửa API sau 
+đó kết nối với một cân bằng tải định nghĩa trên một mạng con public của VPC. Application Load Balancer định tuyến đường đi cho các kết nối từ bên ngoài VPC vào bên 
+trong server và cân bằng tải cho những yêu cầu này giúp tăng tính ổn định và hiệu suất của hệ thống.
+
+Việc triển khai ALB đã một phần giải quyết vấn đề \ref{req:perf}. Tuy nhiên, để một trình nghe nhạc hoạt động hiệu quả hơn, chúng tôi đã sử dụng CloudFront, một
+dịch vụ mạng vận chuyển nội dung (content delivery network)  của AWS với cơ chế hoạt động là: phân phối, lưu trữ dữ liệu thông qua các điểm truy cập mạng trên
+toàn thế giới (được gọi là edge location). Điều này tối ưu hóa khả năng và hiệu suất streaming của trình nghe nhạc giúp tăng cao trải nghiệm người dùng. Để giao
+tiếp với S3 Bucket và VPC đang được bảo mật hoàn toàn được thực thi hai phương thức lần lượt là Origin Access Controll (OAC) và VPC Origin của CloudFront. Đơn 
+giản là hai phương thức này sẽ tạo ra key cá biệt trong CloudFront sau đó, thông qua việc cấp quyền trong S3Bucket và VPC, CloudFront sẽ có khả năng tương tự
+như một người dùng được cấp quyền truy cập mạng riêng.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{figures/deployment.png}
-  \caption{Kiến trúc hệ thống khi triển khai}
+  \caption{Kiến trúc server khi triển khai trên AWS}
   \label{fig:deployment}
 \end{figure}
+
+Biểu đồ \ref{fig:deployment} chỉ là kiến trúc thượng tầng không thể hiện được hết những công cụ và dịch vụ được sử dụng khi triển khai. Để người đọc rõ hơn về
+triển khai hạ tầng chúng tôi xin liệt kê những dịch vụ được sử dụng để thuận tiện cho người đọc tìm hiểu, tra cứu thêm. 
+
+Những dịch vụ chúng tôi sử dụng tóm gọn như sau:
+\begin{itemize}
+  \item CloudFormation: công cụ triển khai hạ tầng bằng code, sử dụng một khuôn mẫu để tạo ngăn xếp chứa tài nguyên và tự động xử lý phụ thuộc
+  \item EC2: một máy ảo, có khả năng tùy chỉnh bộ xử lý và dung lượng bộ nhớ đệm, dùng để triển khai container của docker.
+  \item ECS: kết hợp khi tạo FargateService trên AWS giúp tự động quản lý máy ảo, đảm bảo triển khai ứng dụng, quản lý tài nguyên, tiết kiệm chi phí hiệu quả
+trên nhiều máy (điều này đặc biệt có ý nghĩa với hệ thống có kiến trúc gồm nhiều dịch vụ tách biệt đồng nghĩa nhiều container khi triển khai như microservice)
+  \item Application Load Balancer (ALB): trình định tuyến theo đường đi cho HTTP/HTTPS, có khả năng tự động cân bằng tải
+  \item IAM: Quản lý quyền truy cập trong nội bộ mạng riêng tư
+  \item Kafka (MSK): Triển khai của kafka - một môi giới sự kiện dùng vận chuyển thông tin các sự kiện bất đồng bộ giữa các dịch vụ
+  \item CloudWatch Logs: Sử dụng cho ghi nhận sự kiện (logging), phục vụ cho việc sửa lỗi cũng như giải quyết yêu cầu \ref{req:obs} cho hệ thống.
+  \item RDS: Triển khai cơ sở dữ liệu quan hệ
+  \item CloudMap: kết hợp với Route 53 để tạo hệ miền, mỗi dịch vụ tự đăng ký vào CloundMap giúp các dịch vụ tự khám phá trong nội bộ
+  \item S3: Lưu trữ đối tượng (Object storage) phục vụ việc lưu ảnh và file mp3 của bài hát.
+  \item Secret Manager: Quản lý các chìa khóa bí mật một cách hiệu quả, tự sinh và tự gán cho các dịch vụ cần
+  \item CloudFront: trình phân phối nội dung phân tán thông qua các điểm truy cập mạng (edge location)
+\end{itemize}
+
+Trên đây là những dịch vụ được sử dụng làm nền tảng trong kiến trúc bậc cao của hệ thống khi triển khai trên hạ tầng AWS. Việc trình bày về kiến trúc thượng 
+tầng làm rõ về việc tương tác của các dịch vụ trong hệ thống ở mức bậc cao. Để hiểu rõ về luồng xử lý của hệ thống khi thực hiện các tác vụ cụ thể, chúng tôi
+trình bày về luồng xử lý của hệ thống thông qua các biểu đồ tuần tự trong phần \ref{sec:sequence} tiết theo.
